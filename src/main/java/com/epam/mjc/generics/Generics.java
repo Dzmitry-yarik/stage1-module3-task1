@@ -5,19 +5,20 @@ import java.util.List;
 
 public class Generics {
 
-      public <T> List boxingMethod(T name) {
-        List<T> firstList = new ArrayList<>();
-        firstList.add(name);
-        List<List<T>> secondList = new ArrayList<>();
+       public <T> List<List<String>> boxingMethod(T name) {
+        List<String> firstList = new ArrayList<>();
+        firstList.add(String.valueOf(name));
+        List<List<String>> secondList = new ArrayList<>();
         secondList.add(firstList);
         return secondList;
     }
 
-    public <T> Object genericMethod(Object data) {
+    public <T> T genericMethod(T data) {
         return data;
     }
-    
-    public <T extends Number> void cloneMethod(List<Number> consumer, List<T> producer) {
+
+
+    public <T> void cloneMethod(List<? super T> consumer, List<? extends T> producer) {
         consumer.addAll(producer);
     }
 

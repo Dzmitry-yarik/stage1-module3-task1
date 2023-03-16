@@ -6,9 +6,9 @@ import java.util.List;
 public class Generics {
 
       public <T> List boxingMethod(T name) {
-        List firstList = new ArrayList<>();
+        List<T> firstList = new ArrayList<>();
         firstList.add(name);
-        List secondList = new ArrayList<>();
+        List<List<T>> secondList = new ArrayList<>();
         secondList.add(firstList);
         return secondList;
     }

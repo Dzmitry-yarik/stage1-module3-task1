@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Generics {
-    
-    public List boxingMethod(List<?> name) {
+
+      public <T> List boxingMethod(T name) {
         List firstList = new ArrayList<>();
         firstList.add(name);
         List secondList = new ArrayList<>();
@@ -13,19 +13,11 @@ public class Generics {
         return secondList;
     }
 
-    public List boxingMethod(String name) {
-        List firstList = new ArrayList<>();
-        firstList.add(name);
-        List secondList = new ArrayList<>();
-        secondList.add(firstList);
-        return secondList;
-    }
-
-    public Object genericMethod(Object data) {
+    public <T> Object genericMethod(Object data) {
         return data;
     }
     
-    public <T extends Number> void cloneMethod(List<Number> consumer, List<Integer> producer) {
+    public <T extends Number> void cloneMethod(List<Number> consumer, List<T> producer) {
         consumer.addAll(producer);
     }
 

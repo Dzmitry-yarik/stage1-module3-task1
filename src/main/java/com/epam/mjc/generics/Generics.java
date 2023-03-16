@@ -13,11 +13,19 @@ public class Generics {
         return secondList;
     }
 
-    public <T> Object genericMethod(List<? extends Object> data) {
-        return data;
+    public List boxingMethod(String name) {
+        List firstList = new ArrayList<>();
+        firstList.add(name);
+        List secondList = new ArrayList<>();
+        secondList.add(firstList);
+        return secondList;
     }
 
-    public void cloneMethod(List consumer, List producer) {
+    public Object genericMethod(Object data) {
+        return data;
+    }
+    
+    public <T extends Number> void cloneMethod(List<Number> consumer, List<Integer> producer) {
         consumer.addAll(producer);
     }
 
